@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "antd/dist/antd.css";
 import { withRouter } from "react-router-dom";
 import "./jobExplore.css";
-import { Layout, Menu, Breadcrumb } from "antd";
-import { Card, Avatar } from "antd";
+import { Layout, Menu } from "antd";
 import JobCards from "../JobCards/jobCards";
 
 const { Header, Content, Footer } = Layout;
 
-const { Meta } = Card;
 
 const JobExplore = () => {
   const [searchText, setSearchText] = useState("");

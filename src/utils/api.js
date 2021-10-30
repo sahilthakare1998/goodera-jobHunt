@@ -1,6 +1,5 @@
 // import axios from "./axios";
 import axios from "axios";
-import { baseUrl } from "./constant";
 
 export const getJobCards = async () => {
   let response = await axios

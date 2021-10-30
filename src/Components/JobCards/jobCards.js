@@ -5,8 +5,6 @@ import { Card, Avatar } from "antd";
 import { getJobCards } from "../../utils/api";
 
 const { Meta } = Card;
-const imageUrl =
-  "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80";
 
 const JobCards = ({ filter,filterLocation }) => {
   const [jobDetails, setJobDetails] = useState([]);
@@ -27,7 +25,7 @@ const JobCards = ({ filter,filterLocation }) => {
     else {
       setfilterOutput([...jobDetails]);
     }
-  }, [filter,filterLocation]);
+  }, [filter,filterLocation,jobDetails]);
 
 
   const getJobCardsDetails = () => {
