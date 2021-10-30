@@ -75,9 +75,10 @@ const JobCards = ({ filter,filterLocation }) => {
             <button  onClick={showModal} className="button-details" >Details</button>
           </div>
           <Modal title="Details" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <p dangerouslySetInnerHTML={{__html: `${item.name}`}}></p>
-        <p></p>
-        <p></p>
+          <p>{item.name}</p>
+        <p dangerouslySetInnerHTML={{__html: `${item.contents}`}}></p>
+       
+      
       </Modal>
         </Card>
       ))}
