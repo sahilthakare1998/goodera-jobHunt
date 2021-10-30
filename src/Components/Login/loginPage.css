@@ -1,0 +1,27 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(94, 129, 224, 1)  ;
+}
+
+.input-container{
+  width: 55%;
+  border-radius: 2%;
+  padding: 3% 2% 0% 2%;
+  background-color: #E5E5E5;
+}
+
+.login-button{
+  width: 100%;
+}
+
+.welcome-title{
+  font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 72px;
+color: #5E81E0;
+}
