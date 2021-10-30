@@ -48,7 +48,7 @@ const JobCards = ({ filter,filterLocation }) => {
   return (
     <div className="cards-container">
       {filterOutput.map((item, index) => (
-        <Card style={{ width: 300, marginTop: 5 }}>
+        <Card key={item.id} style={{ width: 300, marginTop: 5 }}>
           <Meta
             avatar={
               <Avatar src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80" />

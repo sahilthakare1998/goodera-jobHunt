@@ -21,7 +21,7 @@ const JobExplore = (props) => {
   const handleClick = e => {
     console.log('e.key',e.key)
 
-      if(e.key === '3'){
+      if(e.key === '4'){
         props.history.push('/') 
       }
     
@@ -35,7 +35,7 @@ const JobExplore = (props) => {
           <Menu.Item key="1">Job Hunt</Menu.Item>
           <Menu.Item key="2">Find Jobs</Menu.Item>
           <Menu.Item key="3">Post a job</Menu.Item>
-          <Menu.Item className='signOut' key="3">SignOut</Menu.Item>
+          <Menu.Item className='signOut' key="4">SignOut</Menu.Item>
         </Menu>
       </Header>
       <Content
