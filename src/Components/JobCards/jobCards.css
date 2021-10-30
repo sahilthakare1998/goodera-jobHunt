@@ -19,3 +19,29 @@
     flex-direction: row;
     justify-content: center;
 }
+
+.button-div{
+    display: flex;
+    flex-flow: row-reverse;
+    margin: 10px -5px;
+}
+
+.button-details{
+    padding: 0px;
+width: 87px;
+height: 21px;
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+
+background-color: transparent;
+
+color: #F07987;
+border: 2px solid #F07987;
+box-sizing: border-box;
+border-radius: 8px;
+
+}

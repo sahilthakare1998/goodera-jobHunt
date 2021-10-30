@@ -3,12 +3,27 @@ import "antd/dist/antd.css";
 import "./jobCards.css";
 import { Card, Avatar } from "antd";
 import { getJobCards } from "../../utils/api";
+import { Modal } from 'antd';
 
 const { Meta } = Card;
 
 const JobCards = ({ filter,filterLocation }) => {
   const [jobDetails, setJobDetails] = useState([]);
   const [filterOutput, setfilterOutput] = useState([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
 
   useEffect(() => {
     getJobCardsDetails();
@@ -56,6 +71,14 @@ const JobCards = ({ filter,filterLocation }) => {
             title={item.name}
             description={item.locations[0]['name'].split(',')[0]}
           />
+          <div className="button-div">
+            <button  onClick={showModal} className="button-details" >Details</button>
+          </div>
+          <Modal title="Details" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        <p dangerouslySetInnerHTML={{__html: `${item.name}`}}></p>
+        <p></p>
+        <p></p>
+      </Modal>
         </Card>
       ))}
     </div>
