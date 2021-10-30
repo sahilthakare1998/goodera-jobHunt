@@ -8,7 +8,7 @@ const { Meta } = Card;
 const imageUrl =
   "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80";
 
-const JobCards = ({ filter }) => {
+const JobCards = ({ filter,filterLocation }) => {
   const [jobDetails, setJobDetails] = useState([]);
   const [filterOutput, setfilterOutput] = useState([]);
 
@@ -17,16 +17,19 @@ const JobCards = ({ filter }) => {
   }, []);
 
   useEffect(() => {
-    if (filter === "") {
-      setfilterOutput([...jobDetails]);
-    } else {
+    if (filter || filterLocation) {
       setfilterOutput(
         [...jobDetails].filter((element) =>
-          element.name.toLowerCase().includes(filter)
+          element.name.toLowerCase().includes(filter) || element.locations[0]['name'].split(',')[0].toLowerCase().includes(filterLocation)
         )
       );
     }
-  }, [filter]);
+    else {
+      setfilterOutput([...jobDetails]);
+    }
+  }, [filter,filterLocation]);
+
+
   const getJobCardsDetails = () => {
     getJobCards()
       .then((response) => {
@@ -51,7 +54,7 @@ const JobCards = ({ filter }) => {
               <Avatar src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80" />
             }
             title={item.name}
-            description={item.short_name}
+            description={item.locations[0]['name'].split(',')[0]}
           />
         </Card>
       ))}
