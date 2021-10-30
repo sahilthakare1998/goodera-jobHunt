@@ -15,12 +15,14 @@ const JobCards = ({ filter,filterLocation }) => {
   }, []);
 
   useEffect(() => {
+
     if (filter || filterLocation) {
       setfilterOutput(
-        [...jobDetails].filter((element) =>
-          element.name.toLowerCase().includes(filter) || element.locations[0]['name'].split(',')[0].toLowerCase().includes(filterLocation)
-        )
-      );
+        [...jobDetails].filter((element) => {
+
+         return  element.name.toLowerCase().includes(filter) && element.locations[0]['name'].split(',')[0].toLowerCase().includes(filterLocation)
+        } 
+        ))
     }
     else {
       setfilterOutput([...jobDetails]);

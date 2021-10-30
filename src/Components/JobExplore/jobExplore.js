@@ -8,7 +8,7 @@ import JobCards from "../JobCards/jobCards";
 const { Header, Content, Footer } = Layout;
 
 
-const JobExplore = () => {
+const JobExplore = (props) => {
   const [searchText, setSearchText] = useState("");
   const [search, setSearch] = useState("");
   const [searchLocation, setSearchLocation] = useState("");
@@ -18,14 +18,24 @@ const JobExplore = () => {
     setsearchOption(searchLocation)
   };
 
+  const handleClick = e => {
+    console.log('e.key',e.key)
+
+      if(e.key === '3'){
+        props.history.push('/') 
+      }
+    
+  };
+
   return (
     <Layout>
       <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
+        <Menu onClick={handleClick} theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
           <Menu.Item key="1">Job Hunt</Menu.Item>
           <Menu.Item key="2">Find Jobs</Menu.Item>
           <Menu.Item key="3">Post a job</Menu.Item>
+          <Menu.Item className='signOut' key="3">SignOut</Menu.Item>
         </Menu>
       </Header>
       <Content
@@ -42,10 +52,11 @@ const JobExplore = () => {
         >
           <div className="filter-box">
             <input onChange={(e) => setSearchText(e.target.value)} />
-            <select name="location" id="location" onChange={e=>{setSearchLocation(e.target.value)}}>
-              <option value="Barcelona">Barcelona</option>
+            <select name="location" id="location" onClick={e=>{setSearchLocation(e.target.value)}}>
+            <option value="">Select Location</option>
+              <option value="nashville">nashville</option>
               <option value="New York">New York</option>
-              <option value="Bengaluru">Bengaluru</option>
+              <option value="findlay">Findlay</option>
               <option value="Berlin">Berlin</option>
             </select>
             <button onClick={filterJobs}>Search</button>
