@@ -1,0 +1,13 @@
+.ant-layout-header {
+
+    background: linear-gradient(274.83deg, #5DB0DF 0.58%, #5D7ADF 74.3%);
+}
+
+.ant-menu-dark.ant-menu-horizontal {
+    background: transparent;
+}
+
+
+.ant-layout-content {
+  padding: 0px !important;
+}

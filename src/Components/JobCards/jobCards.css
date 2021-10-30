@@ -1,0 +1,21 @@
+.cards-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.ant-card-bordered {
+   margin: 10px;
+}
+
+
+.ant-avatar > img {
+    margin: 0;
+}
+
+.filter-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
